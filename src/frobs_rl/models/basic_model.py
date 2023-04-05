@@ -156,7 +156,8 @@ class BasicModel:
         self.env.check_env()
         return True
 
-    def predict(self, observation, state=None, mask=None, deterministic=False):
+    #def predict(self, observation, state=None, mask=None, deterministic=False):
+    def predict(self, observation, state=None, deterministic=False):
         """
         Get the current action based on the observation, state or mask
 
@@ -176,5 +177,5 @@ class BasicModel:
         :rtype: ndarray, ndarray
         """
 
-        return self.model.predict(observation, state=state, mask=mask, deterministic=deterministic)
-    
+        #return self.model.predict(observation, state=state, mask=mask, deterministic=deterministic)
+        return self.model.predict(observation, state=state, deterministic=deterministic)
